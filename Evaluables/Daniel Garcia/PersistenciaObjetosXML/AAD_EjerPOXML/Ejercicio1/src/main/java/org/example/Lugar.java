@@ -1,8 +1,13 @@
 package org.example;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 import java.io.Serializable;
 
+@XStreamAlias("Lugar")
 public class Lugar implements Serializable {
+
+    private static final long serialVersionUID = -5031101434865408464L;
     private String ciudad;
     private String pais;
 

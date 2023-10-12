@@ -8,67 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    static ListaViajes viajess = new ListaViajes();
+    static ListaViajes viajes = new ListaViajes();
     public static void main(String[] args) {
 
 
         //Crear una clase para la listadeViajes como en el ejemplo
-        ListaViajes viajes = new ListaViajes();
-
-        viajes.add(getViaje1());
-        viajes.add(getViaje2());
-
-
-        /*for (Viaje v: viajes.getViajes()){
-            System.out.println(v);
-            System.out.println("------------------");
-        }*/
-
         leerFicheroBinario();
-        System.out.println("***************************************************");
-        for (Viaje v: viajess.getViajes()){
-            System.out.println(v);
-            System.out.println("------------------");
+
+        try {
+            generateXML();
+        } catch (FileNotFoundException ex){
+            System.out.println("Error generar XML -> " + ex.getMessage());
         }
 
+        System.out.println("\nFichero de XML generado correctamente.");
 
-
-        //generateXML(viajes);
-
-    }
-
-    public static Viaje getViaje1(){
-
-        Lugar l1 = new Lugar("Elche", "Espanya");
-        Hotel h1 = new Hotel("Palmeiras", "Calle 34", 200.00);
-        List<String> puntosVisita1 = List.of("Martinez Valero", "centro ciudad", "museo MAHE");
-        Etapa e1 = new Etapa(l1, h1, 4, puntosVisita1);
-        Lugar l2 = new Lugar("Alicante", "Espanya");
-        Hotel h2 = new Hotel("Sant alacanti", "Calle 14", 350.00);
-        List<String> puntosVisita2 = List.of("Rico Pérez", "centro ciudad");
-        Etapa e2 = new Etapa(l2, h2, 4, puntosVisita2);
-        List<Etapa> etapas = List.of(e1, e2);
-        Lugar lugar = new Lugar("Valencia", "España");
-        Viaje v1 = new Viaje(LocalDate.of(2023, 11, 21), LocalDate.of(2023, 11, 22), etapas, lugar);
-
-        return v1;
-    }
-
-    public static Viaje getViaje2(){
-
-        Lugar l1 = new Lugar("Barcelona", "Espanya");
-        Hotel h1 = new Hotel("san jordis", "Calle 44", 500.00);
-        List<String> puntosVisita1 = List.of("Camp nou", "centro ciudad", "Sagrada Familia");
-        Etapa e1 = new Etapa(l1, h1, 4, puntosVisita1);
-        Lugar l2 = new Lugar("Girona", "Espanya");
-        Hotel h2 = new Hotel("girana's Hotel", "Calle 24", 350.00);
-        List<String> puntosVisita2 = List.of("Montilivi", "centro ciudad");
-        Etapa e2 = new Etapa(l2, h2, 4, puntosVisita2);
-        List<Etapa> etapas = List.of(e1, e2);
-        Lugar lugar = new Lugar("Reus", "España");
-        Viaje v1 = new Viaje(LocalDate.of(2023, 12, 22), LocalDate.of(2023, 12, 23), etapas, lugar);
-
-        return v1;
     }
 
     public static void leerFicheroBinario(){
@@ -85,11 +39,8 @@ public class Main {
 
             try{
                 while (true){
-                    System.out.println("A");
                     Viaje v1 = (Viaje) objInpStr.readObject();
-                    System.out.println("a");
-                    System.out.println(v1);
-                    viajess.add(v1);
+                    viajes.add(v1);
                 }
             } catch (ClassNotFoundException e) {
                 System.out.println("Error : " + e.getMessage());
@@ -105,8 +56,20 @@ public class Main {
         }
     }
 
-    public static void generateXML(ArrayList<Viaje> viajes){
+    public static void generateXML() throws FileNotFoundException {
         XStream xStream = new XStream();
+
+        xStream.processAnnotations(Etapa.class);
+        xStream.processAnnotations(Hotel.class);
+        xStream.processAnnotations(ListaViajes.class);
+        xStream.processAnnotations(Lugar.class);
+        xStream.processAnnotations(Viaje.class);
+
+        xStream.addImplicitCollection(ListaViajes.class, "listaViajes");
+        xStream.addImplicitCollection(Viaje.class, "estapas");
+        xStream.addImplicitCollection(Etapa.class, "puntosVista");
+
+        xStream.toXML(viajes, new FileOutputStream("src/main/resources/viajes.xml"));
 
 
     }

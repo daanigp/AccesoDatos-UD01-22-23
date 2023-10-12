@@ -1,12 +1,20 @@
 package org.example;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
+
 import java.io.Serializable;
 import java.util.List;
 
+@XStreamAlias("Etapa")
 public class Etapa implements Serializable {
+
+    private static final long serialVersionUID = 5488764001798701613L;
     private Lugar destino;
+
     private Hotel hotel;
     private int numNoches;
+    @XStreamImplicit(itemFieldName = "Puntos_de_Visita")
     private List<String> puntosVista;
 
     //Constructor vacio

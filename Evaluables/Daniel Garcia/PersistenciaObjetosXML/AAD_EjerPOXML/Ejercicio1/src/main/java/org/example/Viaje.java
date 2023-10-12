@@ -1,12 +1,17 @@
 package org.example;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
+@XStreamAlias("Viaje")
 public class Viaje implements Serializable {
     private LocalDate fechaSalida;
     private LocalDate fechaLlegada;
+    @XStreamImplicit(itemFieldName = "etapas")
     private List<Etapa> estapas;//Porq el profe tiene puesto en el archivo .dat estapas
     // sería etapas.
     private Lugar salida;
