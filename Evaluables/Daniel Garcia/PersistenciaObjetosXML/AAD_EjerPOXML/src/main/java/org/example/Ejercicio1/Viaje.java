@@ -9,7 +9,7 @@ public class Viaje implements Serializable {
     private LocalDate fechaSalida;
     private LocalDate fechaLlegada;
     private List<Etapa> estapas;//Porq el profe tiene puesto en el archivo .dat estapas
-    // sería etapas.
+               // sería etapas.
     private Lugar salida;
 
     //Constructor vacio

@@ -10,12 +10,18 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        ArrayList<Viaje> viajes = new ArrayList<>();
+
+        //Crear una clase para la listadeViajes como en el ejemplo
+        ListaViajes viajes = new ListaViajes();
 
         viajes.add(getViaje1());
         viajes.add(getViaje2());
 
-        //Crear una clase para la listadeViajes como en el ejemplo
+
+        /*for (Viaje v: viajes.getViajes()){
+            System.out.println(v);
+            System.out.println("------------------");
+        }*/
 
         leerFicheroBinario();
 
@@ -78,7 +84,7 @@ public class Main {
             } catch (ClassNotFoundException e) {
                 System.out.println("Error : " + e.getMessage());
             } catch (EOFException eofe){
-                System.out.println("Final de lectura del fichero");
+                System.out.println("Final de lectura del fichero correctamente.");
             }
 
 
