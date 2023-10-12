@@ -1,7 +1,10 @@
 package org.example;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 import java.io.Serializable;
 
+@XStreamAlias("administrativo")
 public class Administrativo extends Persona implements Serializable {
     private int tiempoContrato;
 
@@ -9,13 +12,13 @@ public class Administrativo extends Persona implements Serializable {
     public Administrativo() {
     }
 
-    public Administrativo(String dni, String nombre, String apellido1, String apellido2, String fechaNacimiento, double sueldoBruto) {
-        super(dni, nombre, apellido1, apellido2, fechaNacimiento, sueldoBruto);
+    public Administrativo(String clase, String dni, String nombre, String apellido1, String apellido2, String fechaNacimiento, double sueldoBruto) {
+        super(clase, dni, nombre, apellido1, apellido2, fechaNacimiento, sueldoBruto);
     }
 
     //Constructor con parámetros
-    public Administrativo(String dni, String nombre, String apellido1, String apellido2, String fechaNacimiento, double sueldoBruto, int tiempoContrato) {
-        super(dni, nombre, apellido1, apellido2, fechaNacimiento, sueldoBruto);
+    public Administrativo(String clase, String dni, String nombre, String apellido1, String apellido2, String fechaNacimiento, double sueldoBruto, int tiempoContrato) {
+        super(clase, dni, nombre, apellido1, apellido2, fechaNacimiento, sueldoBruto);
         this.tiempoContrato = tiempoContrato;
     }
 

@@ -1,0 +1,84 @@
+<institutos>
+  <instituto>
+    <nombre>IES LA TORRETA</nombre>
+    <profesor class="profesor">
+      <dni>12345678M</dni>
+      <nombre>Dani</nombre>
+      <apellido1>Garcia</apellido1>
+      <apellido2>Pascual</apellido2>
+      <fechaNacimiento>2002-12-27</fechaNacimiento>
+      <sueldoBruto>3000.2</sueldoBruto>
+      <fechaIncorporacion>2021-05-23</fechaIncorporacion>
+      <historial>
+        <nombreInstituto>LA hoya</nombreInstituto>
+        <anyoAcademico>22-23</anyoAcademico>
+        <asignatura>Inf</asignatura>
+        <asignatura>Ing</asignatura>
+      </historial>
+      <historial>
+        <nombreInstituto>Erche</nombreInstituto>
+        <anyoAcademico>21-22</anyoAcademico>
+        <asignatura>Inf</asignatura>
+        <asignatura>Ing</asignatura>
+      </historial>
+      <falta>
+        <fecha>12-05-2022</fecha>
+        <razon>amigdalitis</razon>
+      </falta>
+      <falta>
+        <fecha>15-10-2023</fecha>
+        <razon>cita médica</razon>
+      </falta>
+    </profesor>
+    <administrativo class="administrativo">
+      <dni>12345678M</dni>
+      <nombre>Laura</nombre>
+      <apellido1>Coves</apellido1>
+      <apellido2>Coves</apellido2>
+      <fechaNacimiento>2002-12-27</fechaNacimiento>
+      <sueldoBruto>3000.2</sueldoBruto>
+      <tiempoContrato>3</tiempoContrato>
+    </administrativo>
+  </instituto>
+  <instituto>
+    <nombre>IES MACIA ABELA</nombre>
+    <profesor class="profesor">
+      <dni>12345678M</dni>
+      <nombre>Juan</nombre>
+      <apellido1>Perez</apellido1>
+      <apellido2>Perez</apellido2>
+      <fechaNacimiento>2002-12-27</fechaNacimiento>
+      <sueldoBruto>3000.2</sueldoBruto>
+      <fechaIncorporacion>2021-02-12</fechaIncorporacion>
+      <historial>
+        <nombreInstituto>Alicante</nombreInstituto>
+        <anyoAcademico>22-23</anyoAcademico>
+        <asignatura>Inf</asignatura>
+        <asignatura>Ing</asignatura>
+      </historial>
+      <historial>
+        <nombreInstituto>Madrid</nombreInstituto>
+        <anyoAcademico>21-22</anyoAcademico>
+        <asignatura>Inf</asignatura>
+        <asignatura>Ing</asignatura>
+      </historial>
+      <falta>
+        <fecha>12-05-2022</fecha>
+        <razon>amigdalitis</razon>
+      </falta>
+      <falta>
+        <fecha>15-10-2023</fecha>
+        <razon>cita médica</razon>
+      </falta>
+    </profesor>
+    <administrativo class="administrativo">
+      <dni>12345678M</dni>
+      <nombre>Sofia</nombre>
+      <apellido1>Rodriguez</apellido1>
+      <apellido2>Martinez</apellido2>
+      <fechaNacimiento>2002-12-27</fechaNacimiento>
+      <sueldoBruto>3000.2</sueldoBruto>
+      <tiempoContrato>3</tiempoContrato>
+    </administrativo>
+  </instituto>
+</institutos>

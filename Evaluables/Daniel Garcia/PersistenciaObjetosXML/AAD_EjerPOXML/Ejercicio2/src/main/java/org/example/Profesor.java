@@ -1,11 +1,13 @@
 package org.example;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@XStreamAlias("profesor")
 public class Profesor extends Persona implements Serializable {
     private String fechaIncorporacion;
     @XStreamImplicit(itemFieldName = "historial")
@@ -19,15 +21,15 @@ public class Profesor extends Persona implements Serializable {
         this.faltas = new ArrayList<>();
     }
 
-    public Profesor(String dni, String nombre, String apellido1, String apellido2, String fechaNacimiento, double sueldoBruto) {
-        super(dni, nombre, apellido1, apellido2, fechaNacimiento, sueldoBruto);
+    public Profesor(String clase, String dni, String nombre, String apellido1, String apellido2, String fechaNacimiento, double sueldoBruto) {
+        super(clase, dni, nombre, apellido1, apellido2, fechaNacimiento, sueldoBruto);
         this.historiales = new ArrayList<>();
         this.faltas = new ArrayList<>();
     }
 
     //Constructor con parámetros
-    public Profesor(String dni, String nombre, String apellido1, String apellido2, String fechaNacimiento, double sueldoBruto, String fechaIncorporacion) {
-        super(dni, nombre, apellido1, apellido2, fechaNacimiento, sueldoBruto);
+    public Profesor(String clase, String dni, String nombre, String apellido1, String apellido2, String fechaNacimiento, double sueldoBruto, String fechaIncorporacion) {
+        super(clase, dni, nombre, apellido1, apellido2, fechaNacimiento, sueldoBruto);
         this.fechaIncorporacion = fechaIncorporacion;
         this.historiales = new ArrayList<>();
         this.faltas = new ArrayList<>();

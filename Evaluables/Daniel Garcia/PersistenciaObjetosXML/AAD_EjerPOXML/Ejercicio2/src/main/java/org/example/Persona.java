@@ -1,8 +1,17 @@
 package org.example;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
+
 import java.io.Serializable;
 
+@XStreamAlias("persona")
 public class Persona implements Serializable {
+
+    @XStreamAlias("class")
+    @XStreamAsAttribute
+    private String clase;
     private String dni;
     private String nombre;
     private String apellido1;
@@ -15,7 +24,8 @@ public class Persona implements Serializable {
     }
 
     //Cosntructor con parámetros
-    public Persona(String dni, String nombre, String apellido1, String apellido2, String fechaNacimiento, double sueldoBruto) {
+    public Persona(String clase, String dni, String nombre, String apellido1, String apellido2, String fechaNacimiento, double sueldoBruto) {
+        this.clase = clase;
         this.dni = dni;
         this.nombre = nombre;
         this.apellido1 = apellido1;
@@ -25,6 +35,14 @@ public class Persona implements Serializable {
     }
 
     //Getters y setters
+    public String getClase() {
+        return clase;
+    }
+
+    public void setClase(String clase) {
+        this.clase = clase;
+    }
+
     public String getDni() {
         return dni;
     }
@@ -77,7 +95,8 @@ public class Persona implements Serializable {
     @Override
     public String toString() {
         return "Persona{" +
-                "dni='" + dni + '\'' +
+                "clase='" + clase + '\'' +
+                ", dni='" + dni + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", apellido1='" + apellido1 + '\'' +
                 ", apellido2='" + apellido2 + '\'' +

@@ -1,13 +1,16 @@
 package org.example;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@XStreamAlias("historial")
 public class Historial implements Serializable {
-    private String nombre;
+
+    private String nombreInstituto;
     private String anyoAcademico;
     @XStreamImplicit(itemFieldName = "asignatura")
     private List<String> asignaturas;
@@ -18,19 +21,19 @@ public class Historial implements Serializable {
     }
 
     //Constructor con parámetros
-    public Historial(String nombre, String anyoAcademico) {
-        this.nombre = nombre;
+    public Historial(String nombreInstituto, String anyoAcademico) {
+        this.nombreInstituto = nombreInstituto;
         this.anyoAcademico = anyoAcademico;
         this.asignaturas = new ArrayList<>();
     }
 
     //Getters y setters
     public String getNombre() {
-        return nombre;
+        return nombreInstituto;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombreInstituto = nombre;
     }
 
     public String getAnyoAcademico() {
@@ -53,7 +56,7 @@ public class Historial implements Serializable {
     @Override
     public String toString() {
         return "Historial{" +
-                "nombre='" + nombre + '\'' +
+                "nombre='" + nombreInstituto + '\'' +
                 ", anyoAcademico='" + anyoAcademico + '\'' +
                 ", asignaturas=" + asignaturas +
                 '}';

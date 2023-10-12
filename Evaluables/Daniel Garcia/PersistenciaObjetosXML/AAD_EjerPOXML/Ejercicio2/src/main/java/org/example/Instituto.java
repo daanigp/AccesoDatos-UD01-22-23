@@ -1,11 +1,13 @@
 package org.example;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@XStreamAlias("instituto")
 public class Instituto implements Serializable {
     private String nombre;
     @XStreamImplicit(itemFieldName = "persona")
