@@ -3,9 +3,6 @@ package org.example;
 import com.thoughtworks.xstream.XStream;
 
 import java.io.*;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     static ListaViajes viajes = new ListaViajes();
@@ -32,10 +29,6 @@ public class Main {
         try{
             FileInputStream lectura = new FileInputStream(f);
             ObjectInputStream objInpStr = new ObjectInputStream(lectura);
-
-            //Viaje v1 = null;
-            //ArrayList<Viaje> listaViajes = new ArrayList<>();
-
 
             try{
                 while (true){

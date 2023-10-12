@@ -2,11 +2,13 @@ package org.example;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 @XStreamAlias("Hotel")
 public class Hotel implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 439729502623497460L;
     private String nombre;
     private String direccion;
