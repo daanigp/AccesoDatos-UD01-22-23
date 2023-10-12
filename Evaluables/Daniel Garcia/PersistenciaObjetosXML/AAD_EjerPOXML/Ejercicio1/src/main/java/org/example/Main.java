@@ -1,4 +1,4 @@
-package org.example.Ejercicio1;
+package org.example;
 
 import com.thoughtworks.xstream.XStream;
 
@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+    static ListaViajes viajess = new ListaViajes();
     public static void main(String[] args) {
 
 
@@ -24,6 +25,12 @@ public class Main {
         }*/
 
         leerFicheroBinario();
+        System.out.println("***************************************************");
+        for (Viaje v: viajess.getViajes()){
+            System.out.println(v);
+            System.out.println("------------------");
+        }
+
 
 
         //generateXML(viajes);
@@ -72,14 +79,17 @@ public class Main {
             FileInputStream lectura = new FileInputStream(f);
             ObjectInputStream objInpStr = new ObjectInputStream(lectura);
 
-            Viaje v1 = null;
-            ArrayList<Viaje> listaViajes = new ArrayList<>();
+            //Viaje v1 = null;
+            //ArrayList<Viaje> listaViajes = new ArrayList<>();
+
 
             try{
                 while (true){
-                    v1 = (Viaje) objInpStr.readObject();
+                    System.out.println("A");
+                    Viaje v1 = (Viaje) objInpStr.readObject();
+                    System.out.println("a");
                     System.out.println(v1);
-                    listaViajes.add(v1);
+                    viajess.add(v1);
                 }
             } catch (ClassNotFoundException e) {
                 System.out.println("Error : " + e.getMessage());
@@ -89,7 +99,7 @@ public class Main {
 
 
         } catch (FileNotFoundException e) {
-            System.out.println("Error -> " + e.getMessage());
+            System.out.println("Error 2 -> " + e.getMessage());
         } catch (IOException ex) {
             System.out.println("Error -> " + ex.getMessage());
         }
@@ -100,5 +110,4 @@ public class Main {
 
 
     }
-
 }

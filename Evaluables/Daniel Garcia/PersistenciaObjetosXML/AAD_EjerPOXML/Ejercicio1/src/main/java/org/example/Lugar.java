@@ -1,9 +1,8 @@
-package org.example.Ejercicio1;
+package org.example;
 
 import java.io.Serializable;
 
 public class Lugar implements Serializable {
-
     private String ciudad;
     private String pais;
 

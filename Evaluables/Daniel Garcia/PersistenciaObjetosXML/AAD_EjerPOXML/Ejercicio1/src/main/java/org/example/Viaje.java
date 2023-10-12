@@ -1,15 +1,14 @@
-package org.example.Ejercicio1;
+package org.example;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
 public class Viaje implements Serializable {
-
     private LocalDate fechaSalida;
     private LocalDate fechaLlegada;
     private List<Etapa> estapas;//Porq el profe tiene puesto en el archivo .dat estapas
-               // sería etapas.
+    // sería etapas.
     private Lugar salida;
 
     //Constructor vacio

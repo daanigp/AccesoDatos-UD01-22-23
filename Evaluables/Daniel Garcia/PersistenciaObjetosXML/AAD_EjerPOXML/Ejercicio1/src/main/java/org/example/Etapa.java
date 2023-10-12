@@ -1,10 +1,9 @@
-package org.example.Ejercicio1;
+package org.example;
 
 import java.io.Serializable;
 import java.util.List;
 
 public class Etapa implements Serializable {
-
     private Lugar destino;
     private Hotel hotel;
     private int numNoches;
